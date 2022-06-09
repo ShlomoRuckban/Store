@@ -1,0 +1,19 @@
+.category-container{
+   border: 1px solid;
+   width:25%;
+   height: 25%;
+   background-color:rgb(246, 245, 245);
+   box-shadow: 1px 1px 4px 1px;
+   border-radius:10px;
+   transition:0.5s ease-out;
+   margin: 30px;
+}
+.category-container:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    
+}
+.images {
+    width: 65%;
+    height: 75%;
+}
