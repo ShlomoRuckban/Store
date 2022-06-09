@@ -13,7 +13,6 @@ const CreateNewItem = () => {
   const [defaultValue, setNewDefaultValue] = useState(undefined);
   const [Error, setError] = useState(true);
 
-  console.log(count, defaultValue);
   if (count !== undefined && defaultValue === undefined) {
     setNewDefaultValue({ catalog: count });
     setError(false);
@@ -23,8 +22,7 @@ const CreateNewItem = () => {
     defaultValue,
   });
   const onSubmit = (data) => {
-    console.log(data);
-    utils.post(data).then((response) => {
+    utils.postItem(data).then((response) => {
       if (response.status === 200) window.location.reload(false);
     });
   };
