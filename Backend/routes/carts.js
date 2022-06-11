@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const carts = await Cart.find().sort("name");
+  const carts = await Cart.find();
   res.send(carts);
 });
 
@@ -13,14 +13,12 @@ router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  var cart = new Cart({
-    name: req.body.name,
-    description: req.body.description,
-    price: req.body.price,
-    quantity: req.body.quantity,
-    catalog: req.body.catalog,
-    category: req.body.category,
-    image: req.body.image,
+  let cart = await Cart.findOne({ userid: req.body.userid });
+  if (cart) return res.status(400).send("User already has a cart.");
+
+  cart = new Cart({
+    userid: req.body.userid,
+    itemid: req.body.itemid,
   });
   cart = await cart.save();
 
@@ -34,13 +32,8 @@ router.put("/:id", async (req, res) => {
   const cart = await Cart.findByIdAndUpdate(
     req.params.id,
     {
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      quantity: req.body.quantity,
-      catalog: req.body.catalog,
-      category: req.body.category,
-      image: req.body.image,
+      userid: req.body.userid,
+      itemid: req.body.itemid,
     },
     { new: true }
   );

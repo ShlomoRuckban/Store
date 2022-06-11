@@ -1,8 +1,0 @@
-{
-    "name": "Laptop",
-    "description": "Alienware Laptop",
-    "price": 900,
-    "quantity": 30,
-    "catalog": 2,
-    "category": "Computers & Electronics"
-}
