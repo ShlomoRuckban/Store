@@ -1,0 +1,9 @@
+.cart-container{
+    padding: 3%;
+    width: 80%;
+    min-height: 600px;
+    border: 1px solid black;
+}
+.cart-body{
+    border: 1px solid black;
+}
