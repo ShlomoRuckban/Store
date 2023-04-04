@@ -41,4 +41,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-The application was created by [Your Name]. If you have any questions or issues, please contact me at [your email].
+The application was created by Shlomo Ruckban and Liav Udi. If you have any questions or issues, please contact me at ShlomoRuckban@gmail.com or LiavUdi@gmail.com.
